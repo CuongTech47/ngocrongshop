@@ -1,0 +1,87 @@
+RewriteRule ^ngoc-rong/thanh-toan$ ngocrong/thanhtoan.php [L]
+RewriteRule ^body/random/NGOCRONG$ ngocrong/nicktamtrung.php [L]
+RewriteRule ^body/random/SOSINH$ ngocrong/nicksosinh.php [L]
+RewriteRule ^ngoc-rong/nick-win-doanh-trai$ ngocrong/nickwindt.php [L]
+RewriteRule ^body/RANDOM/KHODONGOCRONG$ ngocrong/bando.php [L]
+RewriteRule ^nickngocrong.html$ ngocrong/xemchitiet.php [L]
+RewriteRule ^acc/([0-9]+)$ ngocrong/xemchitiet.php?id=$1 [L]
+RewriteRule ^random/([0-9]+)$ ngocrong/xem_random.php?id=$1 [L]
+RewriteRule ^buyacc/([0-9]+)$ ngocrong/muangay.php?id=$1 [L]
+RewriteRule ^thanhtoan/([0-9]+)$ ngocrong/thanhtoan_random.php?id=$1 [L]
+
+RewriteRule ^ngoc-rong/thanh-toan-random$ random/thanhtoan.php [L]
+RewriteRule ^ngoc-rong/random-so-cap$ random/randomsocap.php [L]
+RewriteRule ^ngoc-rong/random-trung-cap$ random/randomtrungcap.php [L]
+RewriteRule ^ngoc-rong/random-bong-tai$ random/randombongtai.php [L]
+RewriteRule ^ngoc-rong/random-cao-cap$ random/randomcaocap.php [L]
+RewriteRule ^body/random/NGOCRONG20K$ ngocrong/random20k.php [L]
+RewriteRule ^body/random/NGOCRONG50K$ ngocrong/random50k.php [L]
+RewriteRule ^body/random/NUOIRONG20K$ ngocrong/nuoirong20k.php [L]
+RewriteRule ^buyrd/([0-9]+)$ random/muangay.php?id=$1 [L]
+
+RewriteRule ^lien-quan/thanh-toan$ lienquan/thanhtoan.php [L]
+RewriteRule ^garena/lien-quan$ lienquan/index.php [L]
+RewriteRule ^nicklienquan.html$ lienquan/xemchitiet.php [L]
+RewriteRule ^acc-lq/([0-9]+)$ lienquan/xemchitiet.php?id=$1 [L]
+RewriteRule ^buyacc-lq/([0-9]+)$ lienquan/muangay.php?id=$1 [L]
+
+
+RewriteRule ^dich-vu/log$ profile/dichvu.php [L]
+RewriteRule ^dich-vu/rut-vang$ profile/rut-vang.php [L]
+RewriteRule ^dich-vu/tag$ profile/tag.php [L]
+RewriteRule ^dich-vu/hentai$ profile/hentai.php [L]
+RewriteRule ^dich-vu/hplayer-vn$ profile/dichvuninja.php [L]
+RewriteRule ^thongtin.php$ profile/thongtin.php [L]
+RewriteRule ^dich-vu/lich-su-thue-dich-vu$ profile/dichvudetu.php [L]
+RewriteRule ^body/DICHVU/NGOCRONG$ dich-vu-ngoc-rong.php [L]
+RewriteRule ^dich-vu/game-ninja-school$ dich-vu-ninja-school.php [L]
+RewriteRule ^dich-vu/log/detail/([0-9]+)$ profile/detail.php?id=$1 [L]
+RewriteRule ^nap-cham$ profile/napcham.php [L]
+RewriteRule ^nap-the$ profile/naptudong.php [L]
+RewriteRule ^nap-the-postcard$ profile/postcard.php [L]
+RewriteRule ^user/change-password$ profile/changepass.php [L]
+RewriteRule ^tran/acc$ profile/nickdamua.php [L]
+RewriteRule ^tran/acc/check-login$ profile/checkacc.php [L]
+RewriteRule ^deposit-history$ profile/thedanap.php [L]
+RewriteRule ^user/tran-log$ profile/lichsugiaodich.php [L]
+RewriteRule ^dich-vu/thanh-ly-nick$ profile/thanhlynick.php [L]
+RewriteRule ^user/withdraw-load-info$ profile/withdraw-load.php [L]
+RewriteRule ^user/bank/add$ profile/addbank.php [L]
+RewriteRule ^user/bank$ profile/bank.php [L]
+RewriteRule ^user/bank/delete$ profile/deletebank.php [L]
+RewriteRule ^user/notify$ profile/thongbao.php [L]
+
+RewriteRule ^terms.html$ terms.php [L]
+RewriteRule ^intro.html$ intro.php [L]
+RewriteRule ^terms.html$ terms.php [L]
+
+RewriteRule ^user/profile$ profile/user.php [L]
+RewriteRule ^purchase/atm.html$ atm.html [L]
+RewriteRule ^random-da-mua.html$ nickrddamua.php [L]
+RewriteRule ^acc-ngoc-rong.html$ nickdamua.php [L]
+RewriteRule ^dich-vu/ban-vang$ profile/banvang.php [L]
+RewriteRule ^dich-vu/ban-ngoc$ profile/banngoc.php [L]
+RewriteRule ^dich-vu/lam-nhiem-vu-thue$ profile/dich-vu-lam-nv-thue.php [L]
+RewriteRule ^dich-vu/up-suc-manh-de-tu$ profile/dich-vu-up-sm-dt.php [L]
+RewriteRule ^dich-vu/ban-bo-ngoc-rong$ profile/dich-vu-ban-ngoc-rong.php [L]
+RewriteRule ^dich-vu/chi-tiet-rut$ profile/thongtinrut.php [L]
+RewriteRule ^dich-vu/san-de-tu-thue$ profile/dich-vu-san-de-tu.php [L]
+RewriteRule ^dich-vu/up-bi-kip-cai-trang-yadart$ profile/dich-vu-up-bk.php [L]
+RewriteRule ^user/withdraw$ profile/ruttien.php [L]
+RewriteRule ^user/tranfer$ profile/chuyentien.php [L]
+RewriteRule ^Hop_qua_may_man_ngoc_rong.html$ hopqua.php [L]
+RewriteRule ^hopquadamo.html$ hopquadamo.php [L]
+
+#vòng quay
+RewriteRule ^quay20k.html$ quay20k.php 
+RewriteRule ^quay50k.html$ quay50k.php 
+
+#ajax
+RewriteRule ^ajax/quaythuong$ assets/ajax/quaythuong.php
+RewriteRule ^ajax/quaythuong50 assets/ajax/quaythuong50.php
+RewriteRule ^ajax/muangay10 assets/ajax/muangay10.php
+RewriteRule ^ajax/muangay50 assets/ajax/muangay50.php
+
+#admin
+RewriteRule ^cpctv/duyet-dich-vu-thue$ cpctv/duyetsandetu.php [L]
+

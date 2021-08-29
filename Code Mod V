@@ -1,0 +1,522 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
+--
+-- Máy chủ: localhost:3306
+-- Thời gian đã tạo: Th5 19, 2019 lúc 01:20 PM
+-- Phiên bản máy phục vụ: 5.6.43
+-- Phiên bản PHP: 7.2.7
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Cơ sở dữ liệu: `k10905te_test`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `DLC_Chuyentien`
+--
+
+CREATE TABLE `DLC_Chuyentien` (
+  `id` int(11) NOT NULL,
+  `nguoichuyen` text CHARACTER SET utf8 NOT NULL,
+  `nguoinhan` text CHARACTER SET utf8 NOT NULL,
+  `sotien` int(11) NOT NULL,
+  `noidung` text CHARACTER SET utf8 NOT NULL,
+  `tinhtrang` int(11) NOT NULL,
+  `time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `DLC_Dichvu`
+--
+
+CREATE TABLE `DLC_Dichvu` (
+  `id` int(11) NOT NULL,
+  `username` text CHARACTER SET utf8 NOT NULL,
+  `nguoiban` text CHARACTER SET utf8 NOT NULL,
+  `dichvu` text CHARACTER SET utf8mb4 NOT NULL,
+  `trigia` int(11) NOT NULL,
+  `tinhtrang` int(11) NOT NULL,
+  `noidung` text CHARACTER SET utf8 NOT NULL,
+  `thoigianduyet` int(11) NOT NULL,
+  `vangngoc` text CHARACTER SET utf8 NOT NULL,
+  `server` int(11) NOT NULL,
+  `taikhoan` text CHARACTER SET utf8 NOT NULL,
+  `matkhau` text CHARACTER SET utf8 NOT NULL,
+  `tennhanvat` text CHARACTER SET utf8 NOT NULL,
+  `thoigian` int(11) NOT NULL,
+  `ngay` int(11) NOT NULL,
+  `thang` int(11) NOT NULL,
+  `nam` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `DLC_hopqua`
+--
+
+CREATE TABLE `DLC_hopqua` (
+  `ID` int(11) NOT NULL,
+  `nguoimua` text CHARACTER SET utf8 NOT NULL,
+  `taikhoan` text CHARACTER SET utf8 NOT NULL,
+  `matkhau` text CHARACTER SET utf8 NOT NULL,
+  `time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `DLC_Logbalance`
+--
+
+CREATE TABLE `DLC_Logbalance` (
+  `id` int(11) NOT NULL,
+  `username` text CHARACTER SET utf8 NOT NULL,
+  `giaodich` int(11) NOT NULL,
+  `sotien` text CHARACTER SET utf8 NOT NULL,
+  `soducuoi` int(11) NOT NULL,
+  `mota` text CHARACTER SET utf8 NOT NULL,
+  `time` int(11) NOT NULL,
+  `ngay` int(11) NOT NULL,
+  `thang` int(11) NOT NULL,
+  `nam` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `DLC_Napthe`
+--
+
+CREATE TABLE `DLC_Napthe` (
+  `id` int(11) NOT NULL,
+  `nguoinap` text CHARACTER SET utf8 NOT NULL,
+  `serial` varchar(25) NOT NULL,
+  `pin` varchar(25) NOT NULL,
+  `type` text CHARACTER SET utf8 NOT NULL,
+  `amount` varchar(25) NOT NULL,
+  `kieunap` int(11) NOT NULL,
+  `tinhtrang` text CHARACTER SET utf8 NOT NULL,
+  `tinhtrangduyet` int(11) NOT NULL,
+  `time` int(25) NOT NULL,
+  `ngay` int(11) NOT NULL,
+  `thang` int(11) NOT NULL,
+  `nam` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `DLC_Nganhang`
+--
+
+CREATE TABLE `DLC_Nganhang` (
+  `id` int(11) NOT NULL,
+  `chubank` text CHARACTER SET utf8 NOT NULL,
+  `username` text CHARACTER SET utf8 NOT NULL,
+  `bankaccount` int(11) NOT NULL,
+  `bankname` text CHARACTER SET utf8 NOT NULL,
+  `chinhanh` text CHARACTER SET utf8 NOT NULL,
+  `type` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `DLC_Nhapnick`
+--
+
+CREATE TABLE `DLC_Nhapnick` (
+  `ID` int(11) NOT NULL,
+  `nguoiban` text CHARACTER SET utf8 NOT NULL,
+  `taikhoan` text NOT NULL,
+  `matkhau` text CHARACTER SET utf8 NOT NULL,
+  `server` int(11) NOT NULL,
+  `loaigame` int(11) NOT NULL,
+  `giatien` int(11) NOT NULL,
+  `noidung` text CHARACTER SET utf8 NOT NULL,
+  `tinhtrang` int(11) NOT NULL,
+  `time` text NOT NULL,
+  `ngay` int(11) NOT NULL,
+  `thang` int(11) NOT NULL,
+  `nam` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `DLC_Nickdamua`
+--
+
+CREATE TABLE `DLC_Nickdamua` (
+  `id` int(11) NOT NULL,
+  `idnick` int(11) NOT NULL,
+  `nguoimua` text CHARACTER SET utf8 NOT NULL,
+  `loaigame` int(11) NOT NULL,
+  `taikhoan` text CHARACTER SET utf8 NOT NULL,
+  `matkhau` text CHARACTER SET utf8 NOT NULL,
+  `server` int(11) NOT NULL,
+  `trigia` int(11) NOT NULL,
+  `nguoiban` text CHARACTER SET utf8 NOT NULL,
+  `time` int(11) NOT NULL,
+  `ngay` int(11) NOT NULL,
+  `thang` int(11) NOT NULL,
+  `nam` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `DLC_Nickrd`
+--
+
+CREATE TABLE `DLC_Nickrd` (
+  `ID` int(11) NOT NULL,
+  `taikhoan` text CHARACTER SET utf8 NOT NULL,
+  `matkhau` text CHARACTER SET utf8 NOT NULL,
+  `giatien` int(11) NOT NULL,
+  `loainick` int(11) NOT NULL,
+  `ngay` int(11) NOT NULL,
+  `thang` int(11) NOT NULL,
+  `nam` int(11) NOT NULL,
+  `congtacvien` text CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `DLC_Nickrddamua`
+--
+
+CREATE TABLE `DLC_Nickrddamua` (
+  `ID` int(11) NOT NULL,
+  `idnick` int(11) NOT NULL,
+  `nguoimua` varchar(30) NOT NULL,
+  `taikhoan` text CHARACTER SET utf8 NOT NULL,
+  `matkhau` text CHARACTER SET utf8 NOT NULL,
+  `giatien` int(11) NOT NULL,
+  `loainick` int(11) NOT NULL,
+  `nguoiban` text CHARACTER SET utf8 NOT NULL,
+  `ngay` int(11) NOT NULL,
+  `thang` int(11) NOT NULL,
+  `nam` int(11) NOT NULL,
+  `time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `DLC_Ruttien`
+--
+
+CREATE TABLE `DLC_Ruttien` (
+  `id` int(11) NOT NULL,
+  `chubank` text NOT NULL,
+  `chinhanh` text NOT NULL,
+  `bankname` text NOT NULL,
+  `bankaccount` text NOT NULL,
+  `sotien` int(11) NOT NULL,
+  `noidung` text NOT NULL,
+  `time` int(11) NOT NULL,
+  `nguoirut` varchar(32) NOT NULL,
+  `tinhtrang` int(11) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `DLC_setting`
+--
+
+CREATE TABLE `DLC_setting` (
+  `id` int(11) NOT NULL,
+  `tenweb` text CHARACTER SET utf8 NOT NULL,
+  `thongbao` text CHARACTER SET utf8 NOT NULL,
+  `ho` text CHARACTER SET utf8 NOT NULL,
+  `ten` text CHARACTER SET utf8 NOT NULL,
+  `sdt` text CHARACTER SET utf8 NOT NULL,
+  `linkfb` text CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `TOM_Congtacvien`
+--
+
+CREATE TABLE `TOM_Congtacvien` (
+  `ID` bigint(20) UNSIGNED NOT NULL,
+  `user` varchar(100) NOT NULL,
+  `pass` varchar(100) NOT NULL,
+  `sonickban` int(11) DEFAULT '0',
+  `nickdangban` int(11) NOT NULL,
+  `doanhthu` int(11) DEFAULT '0',
+  `admin` int(11) DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `TOM_Nick`
+--
+
+CREATE TABLE `TOM_Nick` (
+  `ID` bigint(20) UNSIGNED NOT NULL,
+  `taikhoan` varchar(100) NOT NULL,
+  `matkhau` varchar(100) NOT NULL,
+  `giatien` int(11) NOT NULL,
+  `server` int(11) DEFAULT '0',
+  `hanhtinh` int(11) DEFAULT '0',
+  `bongtai` int(11) NOT NULL,
+  `hinhanh` text NOT NULL,
+  `loainick` int(11) DEFAULT '0',
+  `ngay` int(11) NOT NULL,
+  `thang` int(11) NOT NULL,
+  `nam` int(11) NOT NULL,
+  `congtacvien` varchar(32) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `TOM_setting`
+--
+
+CREATE TABLE `TOM_setting` (
+  `key` tinytext NOT NULL,
+  `tinhtrang` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `TOM_Users`
+--
+
+CREATE TABLE `TOM_Users` (
+  `ID` bigint(20) UNSIGNED NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `name` varchar(60) NOT NULL,
+  `sodu` int(11) DEFAULT '0',
+  `admin` int(11) DEFAULT '0',
+  `locked` int(11) NOT NULL,
+  `vongquay` bigint(50) NOT NULL,
+  `vang` int(100) NOT NULL,
+  `time` text NOT NULL,
+  `ip` varchar(25) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Chỉ mục cho các bảng đã đổ
+--
+
+--
+-- Chỉ mục cho bảng `DLC_Chuyentien`
+--
+ALTER TABLE `DLC_Chuyentien`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `DLC_Dichvu`
+--
+ALTER TABLE `DLC_Dichvu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `DLC_hopqua`
+--
+ALTER TABLE `DLC_hopqua`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Chỉ mục cho bảng `DLC_Logbalance`
+--
+ALTER TABLE `DLC_Logbalance`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `DLC_Napthe`
+--
+ALTER TABLE `DLC_Napthe`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `DLC_Nganhang`
+--
+ALTER TABLE `DLC_Nganhang`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `DLC_Nhapnick`
+--
+ALTER TABLE `DLC_Nhapnick`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Chỉ mục cho bảng `DLC_Nickdamua`
+--
+ALTER TABLE `DLC_Nickdamua`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `DLC_Nickrd`
+--
+ALTER TABLE `DLC_Nickrd`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Chỉ mục cho bảng `DLC_Nickrddamua`
+--
+ALTER TABLE `DLC_Nickrddamua`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Chỉ mục cho bảng `DLC_Ruttien`
+--
+ALTER TABLE `DLC_Ruttien`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `DLC_setting`
+--
+ALTER TABLE `DLC_setting`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `TOM_Congtacvien`
+--
+ALTER TABLE `TOM_Congtacvien`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Chỉ mục cho bảng `TOM_Nick`
+--
+ALTER TABLE `TOM_Nick`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Chỉ mục cho bảng `TOM_setting`
+--
+ALTER TABLE `TOM_setting`
+  ADD PRIMARY KEY (`key`(30));
+
+--
+-- Chỉ mục cho bảng `TOM_Users`
+--
+ALTER TABLE `TOM_Users`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `DLC_Chuyentien`
+--
+ALTER TABLE `DLC_Chuyentien`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT cho bảng `DLC_Dichvu`
+--
+ALTER TABLE `DLC_Dichvu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT cho bảng `DLC_hopqua`
+--
+ALTER TABLE `DLC_hopqua`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `DLC_Logbalance`
+--
+ALTER TABLE `DLC_Logbalance`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=465;
+
+--
+-- AUTO_INCREMENT cho bảng `DLC_Napthe`
+--
+ALTER TABLE `DLC_Napthe`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=256;
+
+--
+-- AUTO_INCREMENT cho bảng `DLC_Nganhang`
+--
+ALTER TABLE `DLC_Nganhang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT cho bảng `DLC_Nhapnick`
+--
+ALTER TABLE `DLC_Nhapnick`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT cho bảng `DLC_Nickdamua`
+--
+ALTER TABLE `DLC_Nickdamua`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
+
+--
+-- AUTO_INCREMENT cho bảng `DLC_Nickrd`
+--
+ALTER TABLE `DLC_Nickrd`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `DLC_Nickrddamua`
+--
+ALTER TABLE `DLC_Nickrddamua`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
+
+--
+-- AUTO_INCREMENT cho bảng `DLC_Ruttien`
+--
+ALTER TABLE `DLC_Ruttien`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `DLC_setting`
+--
+ALTER TABLE `DLC_setting`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT cho bảng `TOM_Congtacvien`
+--
+ALTER TABLE `TOM_Congtacvien`
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `TOM_Nick`
+--
+ALTER TABLE `TOM_Nick`
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=463;
+
+--
+-- AUTO_INCREMENT cho bảng `TOM_Users`
+--
+ALTER TABLE `TOM_Users`
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
